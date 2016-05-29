@@ -32,6 +32,55 @@
 <a id="enigma" class="anchor" href="#enigma" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Enigma</h1>
 
 <p>The enigma encryption algorithm in python</p>
+
+<h2>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h2>
+
+<p>The enigma machine was one of the most advanced crypto graphical technologies of it's time, possibly the most advanced cryptography humanity has achieved without computers.</p>
+
+<p>The enigma machine was mechanical, and relied on three methods to encrypt and decrypt messages.</p>
+
+<p>These are:</p>
+
+<ul>
+<li>Rotor settings</li>
+<li>Ring settings</li>
+<li>Plug settings</li>
+</ul>
+
+<h3>
+<a id="rotor-settings" class="anchor" href="#rotor-settings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Rotor Settings</h3>
+
+<p>A typical enigma machine had three rotors (which we are simulating here). Rotors could be set up in any starting position, corresponding to a letter in the alphabet.</p>
+
+<p>For example, rotor settings could be <code>["A", "A", "A"]</code> or <code>["B", "Q", "Z"]</code></p>
+
+<p>In our simulation here, these will be represented by the ordinal of the these letters (i.e. <code>["A", "A", "A"]</code> will be <code>[65, 65, 65]</code> and <code>["B", "Q", "Z"]</code> will be <code>[66, 81, 90]</code>)</p>
+
+<h3>
+<a id="ring-settings" class="anchor" href="#ring-settings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ring settings</h3>
+
+<p>Ring settings alter the configuration of the rotors to ensure that the same letter is not encrypted the same way twice.</p>
+
+<p>Normally, everytime a letter was pressed, the far right rotor (the third) would progress one letter in the alphabet. Once it had gone around a full revolution (through all 26 letters) the middle rotor would then advance one letter in the alphabet.</p>
+
+<p>This process would continue until the middle rotor had gone around a full revolution, which would advance the left hand rotor one position, and so on and so on through the length of the message</p>
+
+<p>The point at which the right rotor made the middle move and the middle made the left move could be changed. These are the ring setting.</p>
+
+<p>A default ring setting on a three rotor enigma machine would be <code>[26, 26]</code></p>
+
+<h3>
+<a id="plug-settings" class="anchor" href="#plug-settings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Plug settings</h3>
+
+<p>To add another extra layer of security, every enigma machine was equipped with a plugboard.</p>
+
+<p>This board had ten cables that would switch letter configurations (i.e if "A" was plugged into "B", then typing "A" would use the path normally associated with the letter "B")</p>
+
+<p>An example plug setting could be <code>[['P','O'], ['M', 'L'], ['I','U'], ['K','J'], ['N','H'], ['Y','T'], ['G','B'], ['V','F'], ['R','E'], ['D','C']]</code></p>
+
+<p>Again, for the purposes of this simulation, the ordinals of these letters will be use. So this example ring setting would be
+<code>[[80, 79], [77, 76], [73, 85], [75, 74], [78, 72], [89, 84], [71, 66], [86, 70], [82, 69], [68, 67]]</code></p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/patrickleweryharris">patrickleweryharris</a></p>
